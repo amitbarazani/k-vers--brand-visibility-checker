@@ -1,67 +1,39 @@
 # Brand Visibility Checker
 
-This is a simple Flask-based web application that analyzes brand visibility and sentiment using AI or a mock service.
+This is a demo project that analyzes public visibility and sentiment for a given brand and product,
+with optional integration to OpenAI’s GPT models or a mock fallback.
 
-## Features
+## 🚀 Getting Started
 
-- Generate brand-related questions dynamically.
-- Analyze brand visibility and sentiment from generated answers.
-- Use either the OpenAI API or a local mock client.
-- Clean and simple UI for interaction.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the app:
+   ```bash
+   python run.py
+   ```
 
-## Installation
+## 🔍 Features
 
-```bash
-git clone https://github.com/amitbarazani/k-vers--brand-visibility-checker.git
-cd k-vers--brand-visibility-checker
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
+- Analyze sentiment from generated answers
+- Extract competitor brands
+- Mock support for LLM (if no OpenAI key provided)
+- Supports Flask-based web UI
 
-## Environment Setup
+## 🧪 Running Tests
 
-Create a `.env` file based on `.env.example` and add your OpenAI key:
-
-```
-OPENAI_API_KEY=your_api_key_here
-```
-
-If no API key is provided, the app will use a mock client instead.
-
-## Running the App
+To run the unit tests:
 
 ```bash
-python run.py
+pytest
 ```
 
-The app will be available at `http://localhost:5000`.
+## ✅ Continuous Integration
 
-## Project Structure
+This project includes a basic GitHub Actions workflow that automatically runs tests on each push.
 
-```
-.
-├── app
-│   ├── __init__.py
-│   ├── analyzer.py
-│   ├── generator.py
-│   ├── llm_client.py
-│   ├── mock_llm_client.py
-│   ├── llm_selector.py
-│   └── routes.py
-├── templates
-│   └── index.html
-├── static
-│   └── style.css
-├── run.py
-├── requirements.txt
-└── .env.example
-```
-
-## Notes
-
-- Uses `TextBlob` for sentiment analysis.
-- Mock client provides fake answers for demo purposes.
-- Includes logic to automatically choose between real and mock LLM.
-
----
+- Location: `.github/workflows/tests.yml`
+- Trigger: `push` to any branch
+- Action: Installs dependencies and runs `pytest`
