@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brand Visibility Checker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Brand Visibility Checker</h1>
+    <form method="post">
+        <label>Brand:</label>
+        <input type="text" name="brand" required><br>
+        <label>Product/Domain:</label>
+        <input type="text" name="product" required><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if analysis %}
+    <h2>Results for {{ brand }}</h2>
+    <p><strong>Visibility:</strong> {{ analysis.visibility_score }}</p>
+    <p><strong>Sentiment:</strong> {{ analysis.sentiment }}</p>
+    <p><strong>Competitors Mentioned:</strong> {{ analysis.competitors }}</p>
+
+    <h3>Questions & Answers</h3>
+    <ul>
+        {% for q, a in zip(questions, answers) %}
+        <li><strong>{{ q }}</strong><br>{{ a }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
