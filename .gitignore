@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Flask instance folder and config
+instance/
+*.env
+.env.*
+
+# VSCode / PyCharm / other IDEs
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Compiled HTML/static build tools (if used)
+*.tsbuildinfo
+node_modules/
+dist/
+build/
+
+# Pytest cache
+.pytest_cache/
