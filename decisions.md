@@ -72,3 +72,7 @@
 - Ensures test integrity with every change.
 - Helps demonstrate production-readiness in a simple way.
 - Lightweight and runs within GitHub’s free-tier limits.
+
+### Development Time
+
+- The entire task was completed in approximately **2.5 hours**, including development, testing, and deployment.
